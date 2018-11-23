@@ -1,0 +1,17 @@
+﻿<Window x:Class="KernelObjects.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KernelObjects"
+        mc:Ignorable="d"
+        Title="Kernel Objects Demo" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Button Margin="10" Content="Shared Memory with Private Namespace" FontSize="30" />
+            <Button Margin="10" Content="Wrapping a Kernel Object" FontSize="30" />
+            <TextBox AcceptsReturn="True" Height="100" x:Name="_sharedTextBox" Margin="10" BorderThickness="2" />
+        </StackPanel>
+        
+    </Grid>
+</Window>

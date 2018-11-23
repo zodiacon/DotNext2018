@@ -1,0 +1,34 @@
+﻿<Window x:Class="SharedMemory.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SharedMemory"
+        mc:Ignorable="d"
+        Title="Shared Memory" SizeToContent="WidthAndHeight" FontSize="20" ResizeMode="CanMinimize">
+    <Window.DataContext>
+        <local:MainViewModel />
+    </Window.DataContext>
+    <Grid Margin="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="12" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="12" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="12" />
+            <RowDefinition Height="130" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <ToggleButton Content="Use Private Namespace" Padding="6" IsChecked="{Binding UsePrivateNamespace, Mode=TwoWay}"/>
+            <Button Content="Create Shared Memory" Margin="12,0,0,0" Padding="6" Command="{Binding CreateCommand}"/>
+            <Button Content="Close" Margin="12,0,0,0" Padding="6" Command="{Binding CloseCommand}"/>
+        </StackPanel>
+        <TextBox Grid.Row="2" Text="{Binding Text, Mode=TwoWay}"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" HorizontalAlignment="Center">
+            <Button Content="Write" Margin="20,0" Width="80" Command="{Binding WriteCommand}" />
+            <Button Content="Read" Margin="20,0" Width="80" Command="{Binding ReadCommand}" />
+        </StackPanel>
+        <ListBox Grid.Row="6" ItemsSource="{Binding Log}" FontSize="15" />
+    </Grid>
+</Window>
